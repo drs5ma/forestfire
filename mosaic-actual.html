@@ -1,0 +1,147 @@
+        
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+    
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <style>
+    
+        
+
+        
+        body {
+            background-color: black;
+            margin: 5px;
+            display: grid;
+            line-height: 0;
+        }
+        
+        h2 {
+
+            color: black;
+            font-family: courier;
+        }
+        p {
+            color: black;
+            font-size: 16px;
+            font-family: courier;
+            text-indent: 50px;
+        }
+        div {
+            border-radius:5px;
+            display: block;
+            position: absolute;
+            margin: 1px;
+            opacity: 0.75;
+            z-index: -1;
+
+        }
+        divy {
+            padding: 10px;
+
+            border-radius:15px;
+            display: block;
+            position: absolute;
+            background-color: aliceblue;
+            opacity: 0.75;
+            margin: 10px;
+
+        }
+
+        
+    </style>
+    
+</head>
+<body>
+
+    
+    <divy>
+    <h2>Drossel and Schwabl (1992)</h2>
+    
+        <br>
+      <p>A burning cell turns into an empty cell</p>
+      <p>A tree will burn if at least one neighbor is burning</p>
+      <p>A tree ignites with probability f even if no neighbor is burning</p>
+      <p>An empty space fills with a tree with probability p</p>
+    </divy>
+    
+    <script>
+    
+    var width = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+
+    var height = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+        
+    var size = 24;
+        
+    var numx = (width/size) ;
+    var numy = (height/size) ;
+        
+    var flatarray = [];
+    var count  = numx*numy;
+    for(var i=0;i<count;i+=1){
+        var color = d3.rgb(Math.random()*255,Math.random()*255,Math.random()*255); 
+        var x = (i%numx)/numx;
+        var y = parseInt(i/numy)/numy;
+        
+        var obj = {'color':color,
+                  'x':x,
+                  'y':y };
+
+        
+        flatarray.push(obj);
+    }
+        
+    var multidim = [];
+        
+//    d3.select("body")
+//        .selectAll("div")
+//        .data(flatarray)
+//        .enter()
+//        .append("div")
+//        .style("height", String(size)+"px")
+//        .style("width", String(size)+"px")
+//        .style("top", function(d,i){ return String(parseInt(d.y*height))+"px";})
+//        .style("left", function(d,i){ return  String(parseInt(d.x*width))+"px";})
+//        .style("background-color", function(){
+//            return d3.rgb(Math.random()*255,Math.random()*255,Math.random()*255); 
+//        });
+        
+        
+    for(var i=0;i<numx-1;i+=1){
+        multidim.push([]);
+        for(var j=0;j<numy-1;j+=1){
+            
+            var elm = d3.select("body")
+                        .append("div")
+            
+                        .style("height", String(size)+"px")
+                        .style("width", String(size)+"px")
+            
+                        .style("left", function(){ return String((i/numx*width))+"px";})
+                        .style("top", function(){ return String((j/numy*height))+"px";})
+
+            
+                        .style("background-color", function(){
+                            return d3.rgb(Math.random()*255,Math.random()*255,Math.random()*255); 
+                        });
+
+            multidim[i].push(elm);
+            
+        }
+    }
+        
+
+    
+   
+        
+    </script>
+    
+    
+</body>
+</html>
