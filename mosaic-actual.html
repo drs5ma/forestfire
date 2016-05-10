@@ -102,7 +102,7 @@
                 if(!(cx<0 || cx>=numx ) ){
                     if(!(cy<0 ||cy>=numy)){
                         if(!(cy==y && cx==x)){
-                            valid.push([cx,cy]);
+                            valid.push([cy,cx]);
                         }
                     }
                 }
@@ -178,7 +178,7 @@
                 }
                 else if (this_state == "tree"){
                     
-                    var condition_two = (number_neighbors(current_state,row,col,"burning")>=1); 
+                    var condition_two = (number_neighbors(current_state,col,row,"burning")>=1); 
                     
                     if ( (condition_two) || (Math.random()<f) ) {
                         
@@ -245,9 +245,15 @@
         //objectName["propertyName"]
 
         
+    var f = 0.0005;
+    var p = 0.007;
+    var t = 100; //numver of milliseconds
+        
     function draw(){
         
-            requestAnimationFrame(draw);
+            setTimeout(draw,t);
+        
+            //requestAnimationFrame(draw);
         
             current_state = next_state(f,p);
     
@@ -267,21 +273,20 @@
 
             }
         }
+
         
     }
         
         
-    var f = 0.01;
-    var p = 0.07;
-    var t = 1000; //numver of milliseconds
 
         
     //var lastupdated = Date.now();
     
-    //var intervalID = window.setInterval(draw,10000);
+    //var intervalID = window.setTimeout(draw,100);
         
-            
-        draw();
+            //setTimeout(draw,t); // call doMove() in 20 msec
+        
+    draw();
             
 
     
