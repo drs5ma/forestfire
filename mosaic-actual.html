@@ -82,6 +82,9 @@
     var numx = (width/size) ;
     var numy = (height/size) ;
         
+    var x_offset = (width - parseInt(numx)*size ) / 2.0;
+    var y_offset = (height - parseInt(numy)*size) / 2.0
+        
     var flatarray = [];
     var count  = numx*numy;
     for(var i=0;i<count;i+=1){
@@ -123,8 +126,8 @@
                         .style("height", String(size)+"px")
                         .style("width", String(size)+"px")
             
-                        .style("left", function(){ return String((i/numx*width))+"px";})
-                        .style("top", function(){ return String((j/numy*height))+"px";})
+                        .style("left", function(){ return String(x_offset+(i/numx*width))+"px";})
+                        .style("top", function(){ return String(y_offset+(j/numy*height))+"px";})
 
             
                         .style("background-color", function(){
