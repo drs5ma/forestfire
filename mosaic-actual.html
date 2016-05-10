@@ -69,6 +69,11 @@
     
     <script>
     
+        
+
+   
+        
+    
     var width = window.innerWidth
     || document.documentElement.clientWidth
     || document.body.clientWidth;
@@ -79,45 +84,134 @@
         
     var size = 24;
         
-    var numx = (width/size) ;
-    var numy = (height/size) ;
         
-    var x_offset = (width - parseInt(numx)*size ) / 2.0;
-    var y_offset = (height - parseInt(numy)*size) / 2.0
+    var numx = parseInt(width/size) ;
+    var numy = parseInt(height/size) ;
         
-    var flatarray = [];
-    var count  = numx*numy;
-    for(var i=0;i<count;i+=1){
-        var color = d3.rgb(Math.random()*255,Math.random()*255,Math.random()*255); 
-        var x = (i%numx)/numx;
-        var y = parseInt(i/numy)/numy;
+    var x_offset = (width - (numx)*size ) / 2.0;
+    var y_offset = (height - (numy)*size) / 2.0;
         
-        var obj = {'color':color,
-                  'x':x,
-                  'y':y };
-
+    
         
-        flatarray.push(obj);
+    function valid_neighbors(x,y){
+        var valid = [];
+        for(var i=-1;i<=1;i+=1){
+            for(var j=-1;j<=1;j+=1){
+                var cx = x+i;
+                var cy = y+j;
+                if(!(cx<0 || cx>=numx ) ){
+                    if(!(cy<0 ||cy>=numy)){
+                        if(!(cy==y && cx==x)){
+                            valid.push([cx,cy]);
+                        }
+                    }
+                }
+            }
+        }
+        return valid;
     }
         
-    var multidim = [];
+    function number_neighbors(matrix,x,y,state){
+        var count = 0;
+        var valids = valid_neighbors(x,y);
         
-//    d3.select("body")
-//        .selectAll("div")
-//        .data(flatarray)
-//        .enter()
-//        .append("div")
-//        .style("height", String(size)+"px")
-//        .style("width", String(size)+"px")
-//        .style("top", function(d,i){ return String(parseInt(d.y*height))+"px";})
-//        .style("left", function(d,i){ return  String(parseInt(d.x*width))+"px";})
-//        .style("background-color", function(){
-//            return d3.rgb(Math.random()*255,Math.random()*255,Math.random()*255); 
-//        });
+        for(var i=0;i<valids.length;i+=1){
+            var r = valids[i][0];
+            var c = valids[i][1];
+            if( matrix[r][c]==state ){
+                count +=1;   
+            }
+        }
+        return count;
+    }
+        
+    
+            
+        
+    var current_state = [];
+    
+    for(var i=0;i<=numy-1;i+=1){
+        current_state.push([]);
+        for(var j=0;j<=numx-1;j+=1){
+            current_state[i].push("empty");
+        }
+    }
+    
+    
+        
+    
+    function cloneArray(arr) {  
+      // Deep copy arrays. Going one level deep seems to be enough.
+      var clone = [];
+        
+      for (i=0; i<numy; i++) {
+          
+        clone.push( [] );
+          
+        for(var j=0;j<numx;j+=1){
+            
+            clone[i].push(arr[i][j]);
+        }
+          
+      }
+      return clone;
+        
+    }
+
+    
+    function next_state(f,p){
+        //referncing the global current_state
+        
+        var new_state = cloneArray(current_state);
+        
+        for(var row=0;row<numy;row+=1){
+            
+            for(var col=0;col<numx;col+=1){
+                
+                this_state = current_state[row][col];
+                
+                if(this_state=="empty"){
+                    if(Math.random()<p){
+                        new_state[row][col] = "tree";
+                    }
+                    
+                }
+                else if (this_state == "tree"){
+                    
+                    var condition_two = (number_neighbors(current_state,row,col,"burning")>=1); 
+                    
+                    if ( (condition_two) || (Math.random()<f) ) {
+                        
+                        new_state[row][col] = "burning";
+                    }
+                    
+                    
+                }
+                else if(this_state == "burning"){
+                    
+                    new_state[row][col] = "empty";
+                        
+                }
+                
+                
+                
+            }
+        }
+        
+        return new_state;
+        
+    
+        
+    }   
+   
+        
+    
+        
+    var view = [];
         
         
     for(var i=0;i<numx-1;i+=1){
-        multidim.push([]);
+        view.push([]);
         for(var j=0;j<numy-1;j+=1){
             
             var elm = d3.select("body")
@@ -134,10 +228,63 @@
                             return d3.rgb(Math.random()*255,Math.random()*255,Math.random()*255); 
                         });
 
-            multidim[i].push(elm);
+            view[i].push(elm);
             
         }
     }
+        
+        
+    var burning_color = d3.rgb(255,0,0);
+        
+    var tree_color = d3.rgb(0,255,0);
+        
+    var empty_color = d3.rgb(0,0,255);
+        
+    var state_color = {empty:empty_color, tree:tree_color, burning:burning_color};
+
+        //objectName["propertyName"]
+
+        
+    function draw(){
+        
+            requestAnimationFrame(draw);
+        
+            current_state = next_state(f,p);
+    
+            for(var i=0;i<numy-1;i+=1){
+                
+                for(var j=0;j<numx-1;j+=1){
+
+                    var elm = view[j][i];
+
+                    var thisstate = current_state[i][j];
+
+
+                    elm.style("background-color", function(){
+                                    return state_color[thisstate]; 
+                    });
+
+
+            }
+        }
+        
+    }
+        
+        
+    var f = 0.01;
+    var p = 0.07;
+    var t = 1000; //numver of milliseconds
+
+        
+    //var lastupdated = Date.now();
+    
+    //var intervalID = window.setInterval(draw,10000);
+        
+            
+        draw();
+            
+
+    
         
 
     
