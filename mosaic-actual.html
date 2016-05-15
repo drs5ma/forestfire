@@ -82,7 +82,7 @@
     || document.documentElement.clientHeight
     || document.body.clientHeight;
         
-    var size = 24;
+    var size = 12;
         
         
     var numx = parseInt(width/size) ;
@@ -238,16 +238,16 @@
         
     var tree_color = d3.rgb(0,255,0);
         
-    var empty_color = d3.rgb(0,0,255);
+    var empty_color = d3.rgb(0,0,0);
         
     var state_color = {empty:empty_color, tree:tree_color, burning:burning_color};
 
         //objectName["propertyName"]
 
         
-    var f = 0.0005;
-    var p = 0.007;
-    var t = 100; //numver of milliseconds
+    var f = 0.00024;
+    var p = 0.01;
+    var t = 48; //numver of milliseconds
         
     function draw(){
         

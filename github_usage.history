@@ -1,0 +1,500 @@
+   16  python3 nlp_stuff.py > results
+   17  cat results
+   18  python3 nlp_stuff.py > results
+   19  cat results
+   20  python3 nlp_stuff.py > results
+   21  python3 nlp_stuff.py > results
+   22  cat re
+   23  cat results
+   24  cat results
+   25  python3 nlp_stuff.py > results
+   26  cat results
+   27  python3 nlp_stuff.py > results
+   28  cat results
+   29  python3 nlp_stuff.py > results
+   30  cat results
+   31  python3 nlp_stuff.py > results
+   32  cat results
+   33  python3 nlp_stuff.py > results
+   34  cat results
+   35  python3 nlp_stuff.py > results
+   36  cat results
+   37  python3 nlp_stuff.py > results
+   38  cat results
+   39  python3 nlp_stuff.py > results
+   40  cat results
+   41  python3 nlp_stuff.py > results
+   42  cat results
+   43  python3 nlp_stuff.py > results
+   44  cat results
+   45  python3 nlp_stuff.py > results
+   46  cat results
+   47  python3 nlp_stuff.py > results
+   48  cat results
+   49  python3 nlp_stuff.py > results
+   50  python3 nlp_stuff.py > results
+   51  cat results
+   52  python3 nlp_stuff.py > results
+   53  cat results
+   54  python3 nlp_stuff.py > results
+   55  cat results
+   56  python3 nlp_stuff.py > results
+   57  cat results
+   58  python3 nlp_stuff.py > results
+   59  cat results
+   60  python3 nlp_stuff.py > results
+   61  cat results
+   62  python3 nlp_stuff.py > results
+   63  cat results
+   64  python3 nlp_stuff.py > results
+   65  cat results
+   66  python3 nlp_stuff.py > results
+   67  python3 nlp_stuff.py > results
+   68  python3 nlp_stuff.py > results
+   69  cat results
+   70  python3 nlp_stuff.py
+   71  python3 nlp_stuff.py
+   72  python3 nlp_stuff.py
+   73  python3 nlp_stuff.py
+   74  python3 nlp_stuff.py
+   75  python3 nlp_stuff.py
+   76  python3 nlp_stuff.py
+   77  python3 nlp_stuff.py
+   78  python3 nlp_stuff.py
+   79  python3 nlp_stuff.py
+   80  python3 nlp_stuff.py
+   81  python3 nlp_stuff.py
+   82  python3 nlp_stuff.py
+   83  python3 nlp_stuff.py
+   84  python3 nlp_stuff.py
+   85  ssh drs5ma@franklin.achs.virginia.edu
+   86  scp drs5ma@franklin.achs.virginia.edu:~/biol4230/hwk10/wgEncode_Sp1_tss.bed wgEncode_Sp1_tss.bed
+   87  ssh drs5ma@labunix01.cs.virginia.edu
+   88  ls
+   89  python3 nlp_stuff.py
+   90  ls
+   91  cd documents
+   92  ls
+   93  cd dataviz_final/
+   94  ls
+   95  python3 nlp_stuff.py
+   96  python3 nlp_stuff.py
+   97  python3 nlp_stuff.py
+   98  python3 nlp_stuff.py
+   99  python3 nlp_stuff.py
+  100  python3 nlp_stuff.py
+  101  python3 nlp_stuff.py
+  102  http-s
+  103  ls
+  104  ssh drs5ma@franklin.achs.virginia.edu
+  105  ssh drs5ma@franklin.achs.virginia.edu
+  106  awk '{len = $3 - $2; if (len < 250 && len > 25) { print $_}}' wgEncode_Sp1_020.bed > wgEncode_Sp1_ranged.bed
+  107  awk '{len = $3 - $2; if (len < 250 && len > 25) { print $_}}' wgEncode_Sp1_020.bed > wgEncode_Sp1_ranged.bed
+  108  ssh drs5ma@franklin.achs.virginia.edu
+  109  s
+  110  ls
+  111  cd desktop
+  112  ls
+  113  scp drs5ma@franklin.achs.virginia.edu:~/biol4230/hwk10_withnewscript/wgEncode_Sp1_tss.bed wgEncode_Sp1_tss.bed
+  114  sed
+  115  head wgEncode_Sp1_tss.bed 
+  116  head sp1.fasta 
+  117  cat sp1.fasta | sed -e 's/hg19_ct_UserTrack_3545_Sp1 range=//g' > sp1_fixed.fasta
+  118  l
+  119  ls
+  120  head sp1_fixed.fasta 
+  121  scan_bedg.py -t 2.0 -w 10 -n rev /data/slib/biol4230/bed-tools/wgEncode_ChIP_rev.bedg > wgEncode_rev_020.bed
+  122  scan_bedg.py -t 2.0 -w 10 -n rev /data/slib/biol4230/bed-tools/wgEncode_ChIP_rev.bedg > wgEncode_rev_020.bed
+  123  ssh drs5ma@franklin.achs.virginia.edu
+  124  scp drs5ma@franklin.achs.virginia.edu:~/biol4230/hwl10_withnewscript/wgEncode_rev_tss2.bed wgEncode_rev_tss2.bed 
+  125  scp drs5ma@franklin.achs.virginia.edu:~/biol4230/hwk10_withnewscript/wgEncode_rev_tss2.bed wgEncode_rev_tss2.bed 
+  126  scp drs5ma@franklin.achs.virginia.edu:~/biol4230/hwk10_withnewscript/wgEncode_rev_tss.bed wgEncode_rev_tss.bed 
+  127  ls
+  128  cat rev.fasta | sed -e 's/hg19_ct_UserTrack_3545_Sp1 range=//g' > rev_fixed.fasta
+  129  cat rev2.fasta | sed -e 's/hg19_ct_UserTrack_3545_Sp1 range=//g' > rev2_fixed.fasta
+  130  cat rev2.fasta | sed -e 's/hg19_ct_UserTrack_3545_rev range=//g' > rev2_fixed.fasta
+  131  cat rev.fasta | sed -e 's/hg19_ct_UserTrack_3545_rev range=//g' > rev_fixed.fasta
+  132  scp *.fasta drs5ma@franklin.achs.virginia.edu:~/biol4230/hwk10_withnewscript/
+  133  ssh drs5ma@franklin.achs.virginia.edu
+  134  ls
+  135  cd desktop
+  136  cd dataviz_final
+  137  cd ../documents/dataviz_final
+  138  ls
+  139  python3 nlp_stuff.py
+  140  python3 nlp_stuff.py
+  141  python3 nlp_stuff.py
+  142  python3 nlp_stuff.py
+  143  python3 nlp_stuff.py
+  144  python3 nlp_stuff.py
+  145  python3 nlp_stuff.py
+  146  python3 nlp_stuff.py
+  147  python3 nlp_stuff.py
+  148  python3 nlp_stuff.py
+  149  python3 nlp_stuff.py
+  150  python3 nlp_stuff.py
+  151  python3 nlp_stuff.py
+  152  python3 nlp_stuff.py
+  153  python3 nlp_stuff.py
+  154  python3 nlp_stuff.py
+  155  python3 nlp_stuff.py
+  156  python3 nlp_stuff.py
+  157  python3 nlp_stuff.py
+  158  python3 nlp_stuff.py
+  159  python3 nlp_stuff.py
+  160  python3 nlp_stuff.py
+  161  python3 nlp_stuff.py
+  162  python3 nlp_stuff.py
+  163  python3 nlp_stuff.py
+  164  python3 nlp_stuff.py
+  165  python3 nlp_stuff.py
+  166  python3 nlp_stuff.py
+  167  python3 nlp_stuff.py
+  168  python3 nlp_stuff.py
+  169  ls
+  170  ls -lt
+  171  cat some.csv
+  172  rm some.csv 
+  173  python3 nlp_stuff.py
+  174  ls -lt
+  175  head some.csv 
+  176  python3 nlp_stuff.py
+  177  ls -lt
+  178  head some.csv 
+  179  cat some.csv 
+  180  emacs some.csv 
+  181  python3 nlp_stuff.py
+  182  python3 nlp_stuff.py
+  183  python3 nlp_stuff.py
+  184  python3 nlp_stuff.py
+  185  ls
+  186  ls -lt
+  187  rm some.csv
+  188  python3 nlp_stuff.py
+  189  rm some.csv
+  190  python3 nlp_stuff.py
+  191  python3 nlp_stuff.py
+  192  python3 nlp_stuff.py
+  193  python3 nlp_stuff.py
+  194  python3 nlp_stuff.py
+  195  head some.csv 
+  196  tail some.csv 
+  197  python3 nlp_stuff.py
+  198  head some.csv 
+  199  tail some.csv 
+  200  python3 nlp_stuff.py
+  201  tail some.csv 
+  202  head some.csv 
+  203  cat some.csv | cut -d, -f | wc -l
+  204  cat some.csv | cut -d, -f1- | wc -l
+  205  cat some.csv | cut -d, -f1- 
+  206  cat some.csv | cut -d, -f1- awk 'BEGIN {FS=","} ; END{print NF}' Input_file
+  207  awk 'BEGIN {FS=","} ; END{print NF}' Input_file
+  208  awk 'BEGIN {FS=","} ; END{print NF}
+  209  ' some.csv
+  210  awk 'BEGIN {FS=","} ; END{print NF}
+  211  ' some.csv
+  212  python3 nlp_stuff.py
+  213  python3 nlp_stuff.py
+  214  tail some.csv 
+  215  head some.csv 
+  216  python3 nlp_stuff.py
+  217  head some.csv 
+  218  python3 nlp_stuff.py
+  219  3
+  220  python3 nlp_stuff.py
+  221  python3 nlp_stuff.py
+  222  python3 nlp_stuff.py
+  223  python3 nlp_stuff.py
+  224  python3 nlp_stuff.py
+  225  python3 nlp_stuff.py
+  226  python3 nlp_stuff.py
+  227  python3 nlp_stuff.py
+  228  python3 nlp_stuff.py
+  229  python3 nlp_stuff.py
+  230  wc -l some.csv
+  231  python3 nlp_stuff.py
+  232  wc -l some.csv
+  233  python3 nlp_stuff.py
+  234  wc -l some.csv
+  235  python3 nlp_stuff.py
+  236  wc -l some.csv
+  237  wc -l some.csv
+  238  python3 nlp_stuff.py
+  239  wc -l some.csv
+  240  wc -l some.csv
+  241  python3 nlp_stuff.py
+  242  wc -l some.csv
+  243  wc -l some.csv
+  244  python3 nlp_stuff.py
+  245  wc -l some.csv
+  246  python3 nlp_stuff.py
+  247  wc -l some.csv
+  248  python3 nlp_stuff.py
+  249  wc -l some.csv
+  250  python3 nlp_stuff.py
+  251  python3 nlp_stuff.py
+  252  wc -l some.csv
+  253  python3 nlp_stuff.py
+  254  wc -l some.csv
+  255  python3 nlp_stuff.py
+  256  python3 nlp_stuff.py
+  257  wc -l some.csv
+  258  wc -l some.csv
+  259  python3 nlp_stuff.py
+  260  wc -l some.csv
+  261  wc -l some.csv
+  262  python3 nlp_stuff.py
+  263  wc -l some.csv
+  264  wc -l some.csv
+  265  python3 nlp_stuff.py
+  266  wc -l some.csv
+  267  cat some.csv
+  268  python3 nlp_stuff.py
+  269  python3 nlp_stuff.py
+  270  cat some.csv
+  271  wc -l some.csv
+  272  python3 nlp_stuff.py
+  273  python3 nlp_stuff.py
+  274  python3 nlp_stuff.py
+  275  cat some.csv
+  276  python3 nlp_stuff.py
+  277  cat some.csv
+  278  python3 nlp_stuff.py
+  279  cat some.csv
+  280  python3 nlp_stuff.py
+  281  cat some.csv
+  282  python3 nlp_stuff.py
+  283  cat some.csv
+  284  python3 nlp_stuff.py
+  285  cat some.csv
+  286  python3 nlp_stuff.py
+  287  cat some.csv
+  288  python3 nlp_stuff.py
+  289  wc -l some.csv
+  290  python3 nlp_stuff.py
+  291  wc -l some.csv
+  292  python3 nlp_stuff.py
+  293  python3 nlp_stuff.py
+  294  python3 nlp_stuff.py
+  295  python3 nlp_stuff.py
+  296  python3 nlp_stuff.py
+  297  python3 nlp_stuff.py
+  298  python3 nlp_stuff.py
+  299  python3 nlp_stuff.py
+  300  cat /proc/meminfo
+  301  cd ~
+  302  cd ..
+  303  cd ..
+  304  cd ..
+  305  cd ..
+  306  cd ..
+  307  cat /proc/meminfo
+  308  ssh drs5ma@labunix01.cs.virginia.edu
+  309  /Users/danielsaha/Desktop/cool\ glitch\ saves/text\ glitch ; exit;
+  310  cd dataviz
+  311  cd Documents
+  312  cd dataviz_final/
+  313  python3 nlp_stuff.py
+  314  python3 nlp_stuff.py
+  315  python3 nlp_stuff.py
+  316  python3 nlp_stuff.py
+  317  python3 nlp_stuff.py
+  318  python3 nlp_stuff.py
+  319  python3 nlp_stuff.py
+  320  python3 nlp_stuff.py
+  321  python3 nlp_stuff.py
+  322  python3 nlp_stuff.py
+  323  python3 nlp_stuff.py
+  324  python3 nlp_stuff.py
+  325  python3 nlp_stuff.py
+  326  man 3 sbrk
+  327  man brk
+  328  man brk
+  329  cd ..
+  330  cd .
+  331  cd ..
+  332  cd ..
+  333  cd ..
+  334  cd ..
+  335  ls
+  336  pip3 install -U textblob
+  337  sudo pip3 install -U textblob
+  338  python3 -m textblob.download_corpora
+  339  python3
+  340  cd users
+  341  ls
+  342  cd danielsaha/
+  343  cd docu
+  344  cd Documents/
+  345  cd dataviz_final/
+  346  python3 nlp_stuff.py
+  347  python3 nlp_stuff.py
+  348  python3 nlp_stuff.py
+  349  python3 nlp_stuff.py
+  350  python3 nlp_stuff.py
+  351  python3 nlp_stuff.py
+  352  python3 nlp_stuff.py
+  353  python3 nlp_stuff.py
+  354  python3 nlp_stuff.py
+  355  python3 nlp_stuff.py
+  356  python3 nlp_stuff.py
+  357  python3 nlp_stuff.py
+  358  python3 nlp_stuff.py
+  359  python3 nlp_stuff.py
+  360  python3 nlp_stuff.py
+  361  python3 nlp_stuff.py
+  362  python3 nlp_stuff.py
+  363  python3 nlp_stuff.py
+  364  python3 nlp_stuff.py
+  365  python3 nlp_stuff.py
+  366  python3 nlp_stuff.py
+  367  python3 nlp_stuff.py
+  368  python3 nlp_stuff.py
+  369  python3 nlp_stuff.py
+  370  http-server
+  371  http-server
+  372  python3 nlp_stuff.py
+  373  http-server
+  374  http-server
+  375  python3 nlp_stuff.py
+  376  python3 nlp_stuff.py
+  377  http-server
+  378  python3 nlp_stuff.py
+  379  http-server
+  380  python3 nlp_stuff.py
+  381  http-server
+  382  python3 nlp_stuff.py
+  383  ls
+  384  ssh drs5ma@franklin.achs.virginia.edu
+  385  ssh drs5ma@franklin.achs.virginia.edu
+  386  ssh drs5ma@franklin.achs.virginia.edu
+  387  ssh drs5ma@franklin.achs.virginia.edu
+  388  ssh drs5ma@franklin.achs.virginia.edu
+  389  ssh drs5ma@franklin.achs.virginia.edu
+  390  ssh drs5ma@franklin.achs.virginia.edu
+  391  ls -lt
+  392  ssh drs5ma@franklin.achs.virginia.edu
+  393  cd documents
+  394  cd dataviz_final/
+  395  http-server
+  396  python3 nlp_stuff.py
+  397  http-server
+  398  python3 nlp_stuff.py
+  399  python3 nlp_stuff.py
+  400  http-server
+  401  http-server
+  402  python3 nlp_stuff.py
+  403  http-server
+  404  python3 nlp_stuff.py
+  405  http-server
+  406  python3 nlp_stuff.py
+  407  http-server
+  408  http-server
+  409  http-server
+  410  http-server
+  411  http-server
+  412  python3 nlp_stuff.py
+  413  http-server
+  414  http-server
+  415  http-server
+  416  http-server
+  417  python3 nlp_stuff.py
+  418  ssh drs5ma@franklin.achs.virginia.edu
+  419  ssh drs5ma@franklin.achs.virginia.edu
+  420  ls
+  421  ls
+  422  curl http://meme-suite.org/opal-jobs/appMEME_4.11.21462751017307-90474470/meme.html > rep2125.html
+  423  cat rep2125.html 
+  424  ssh drs5ma@franklin.achs.virginia.edu
+  425  cd desktop
+  426  cd data
+  427  ls *viz*
+  428  ls
+  429  cd ../document
+  430  cd ../documents
+  431  cd dataviz_final/
+  432  ls
+  433  http-server
+  434  http-server
+  435  http-server
+  436  http-server
+  437  ssh drs5ma@franklin.achs.virginia.edu
+  438  http-server
+  439  ls
+  440  cd ..
+  441  ls
+  442  ls
+  443  ls -lt
+  444  cd ..
+  445  ls
+  446  cd desktop
+  447  ls
+  448  ls *data*
+  449  cd ..
+  450  ls
+  451  cd docum
+  452  cd documents
+  453  ls
+  454  ls -t
+  455  ls *data*
+  456  ls -lt
+  457  ls *data*
+  458  ls
+  459  cd dataviz_final/
+  460  ls
+  461  cd ..
+  462  ls
+  463  ls *data
+  464  ls data*
+  465  cd ..
+  466  ls
+  467  cd desktop
+  468  ls
+  469  ls *data*
+  470  ls *data
+  471  cd DATAVIZ
+  472  cd DATA VIZ
+  473  cd DATAVIZ
+  474  ls
+  475  http-server
+  476  http-server
+  477  ls
+  478  git clone https://github.com/git/git
+  479  ls -lt
+  480  cd ../forestfire/
+  481  ls
+  482  http-server
+  483  ls
+  484  git init
+  485  git add .
+  486  git commit -m "first commit"
+  487  git push origin master
+  488  git add .
+  489  git commit -m "send"
+  490  git push origin master
+  491  ls
+  492  http-server
+  493  ls
+  494  cd ..
+  495  ls
+  496  http-server
+  497  ls
+  498  cd forestfire/
+  499  http-server
+  500  cd desktop
+  501  cd forestfire/
+  502  http-server
+  503  http-server
+  504  http-server
+  505  http-server
+  506  http-server
+  507  http-server
+  508  http-server
+  509  git status
+  510  git add -A
+  511  git status
+  512  git commit -am "Added Forest Fire algorithm"
+  513  git push origin master
+  514  git push origin master
+  515  history > github_usage.history
